@@ -1,0 +1,188 @@
+.container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: url("./IMG/fondo.jpg") repeat;
+  color: rgb(0, 0, 0);
+}
+
+html, body {
+  width: 100%;
+  min-width: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+header {
+  padding-top: 20px;
+}
+
+.sushi-top {
+  text-align: right;
+  margin-bottom: 30px;
+}
+
+.logo img {
+  width: 180px;
+  border-radius: 50%;
+}
+
+.banner {
+  margin-bottom: 30px;
+}
+
+.auth {
+  font-size: 12px;
+  color: #666;
+  margin-left: 10px;
+}
+
+footer {
+  background: rgb(228, 175, 0);
+  margin: 30px auto 0;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.menu li {
+  width: 100%;
+  background: #000000;
+  text-align: center;
+}
+
+.menu a {
+  display: block;
+  padding: 12px 0;
+  color: white;
+  font-size: 13px;
+  text-align: center;
+}
+
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  width: 380px;
+}
+
+.card img {
+  height: 180px;
+}
+
+.card h2 {
+  font-size: 18px;
+  color: #444;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  background: #444;
+  color: white;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+
+@media (max-width: 420px) {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  header {
+    padding-top: 15px;
+  }
+
+  .top-bar {
+    text-align: center;
+  }
+
+  .auth {
+    margin-top: 10px;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .banner img {
+    height: auto;
+  }
+
+  .products {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card img {
+    height: auto;
+  }
+
+  footer {
+    width: 100%;
+    border-radius: 10;
+  }
+
+  .footer-menu {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu {
+    min-width: 0;
+  }
+
+  .products {
+    min-width: 0;
+  }
+}
