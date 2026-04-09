@@ -7,7 +7,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url('../IMG/elegante-fondo-madera-negra-texturas.avif');
+  background-image: url('../img/elegante-fondo-madera-negra-texturas.avif');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   color: rgb(255, 255, 255);
@@ -40,8 +40,14 @@ header {
   margin-bottom: 30px;
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
 .logo img {
-  width: 180px;
+  width: 360px;
   border-radius: 50%;
   
 }
@@ -70,12 +76,12 @@ header {
 
 
 footer {
-  background: rgb(255, 255, 255);
+  background: rgb(64, 64, 64);
   margin: 30px auto 0;
   border-radius: 10px;
   width: 100%;
   max-width: 1200px;
-  color: #000000;
+  color: #ffffff;
 }
 
 img {
