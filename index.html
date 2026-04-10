@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  
+
   <header class="container">
     <div class="sushi-top"></div>
     <div class="logo">
@@ -16,7 +16,7 @@
     <div class="searchbar">
       <form id="searchForm" action="./search-result.html" method="get" class="searchbarform">
             <input type="text" id="searchbar" name="buscar" class="searchbar" placeholder="Buscar...">
-            <button class="indbutton" type="submit" class="buttonsearch">Buscar</button>
+            <button type="submit" class="indbutton buttonsearch">Buscar</button>
       </form>
     </div>
     <div class="auth">
@@ -31,15 +31,21 @@
     </ul>
   </nav>
 </header>
-
+  <div class="categorysec">
+        <aside class="categorynav">
+            <ul class="categoryul">
+                <li class="categorili"><a href="./category.html" class="categorya">Rolls picantes</a></li>
+                <li class="categorili"><a href="./category.html" class="categorya" >Nigiris</a></li>
+                <li class="categorili"><a href="./category.html" class="categorya">Rolls populares</a></li>
+                <li class="categorili"><a href="./category.html" class="categorya">Rolls calientes</a></li>
+            </ul>
+        </aside>
  <main class="container">
-  <section class="banner">
-    <img src="img/banner.png" alt="">
-  </section>
-
+    <div class="banner">
+        <img src="IMG/banner.png" alt="" class="bannerindex">
+    </div>
   <section class="products">
-
-    <article class="card">
+  <article class="card">
     <img src="img/avocado-salmon-roll.jpg" alt="">
       <h2>Avocado Salmon Roll x5</h2>
       <p>Precio: 15000 $</p>
@@ -98,27 +104,29 @@
       <a href="product.html" class="btn">Ver Detalles</a> 
       <br>
     </article>
+    <article class="card">
         <img src="img/togarashi-ny-phila-x5.jpg" alt="">
       <h2>Togarashi NY Phila x5</h2>
       <p>Precio: 21500 $</p>
-      <a href="product.html" class="btn">Ver Detalles</a> 
+      <a href="product.html" class="btn">Ver Detalles</a>
       <br>
     </article>
+    <article class="card">
         <img src="img/tempura-salmon-roll-x5.jpg" alt="">
       <h2>Tempura Salmon Roll X5</h2>
       <p>Precio: 21000 $</p>
-      <a href="product.html" class="btn">Ver Detalles</a> 
+      <a href="product.html" class="btn">Ver Detalles</a>
       <br>
     </article>
 
   </section>
 
-  <section>
+  </main>
+</div>
 
-  </section>
-        <footer>
-        <p>NAHUEL ABRAHAM, ALFREDO YABRAN, FEDERICO CHORNY</p>
-    </footer>
+<footer>
+    <p>NAHUEL ABRAHAM, ALFREDO YABRAN, FEDERICO CHORNY</p>
+</footer>
 </body>
 
 

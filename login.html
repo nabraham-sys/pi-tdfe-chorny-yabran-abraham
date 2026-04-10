@@ -39,18 +39,29 @@
     </ul>
   </nav>
 </header>
-<body>
-    <div class="login-container">
-        <h1>Formulario de Log in</h1>
-        <form action="index.html" method="GET">
-            <div><input type="email" name="email" id="" placeholder="email"></div> 
-            <br>
-                <div><input type="password" id="" name="Contraseña" value="" placeholder="Contraseña"> </div>
-            <br>
-            <div> <label for="ingresar"></label><input type="button" value="ingresar"></div>
-        </form>
-    <a href="register.html">No tengo cuenta</a>
-    </div>
+<section class="usersec">
+    <form action="./index.html" method="get" class="form_user loginForm" novalidate>
+        <h1>Ingrese su sesion.</h1>
+
+        <div>
+            <label for="email">Escriba su email:</label>
+            <input class="inputregi email" type="email" name="email" placeholder="Escriba un mail existente">
+        </div>
+        <p class="errorlogin errorEmail"></p>
+
+        <div>
+            <label for="contraseña">Escriba su contraseña</label>
+            <input class="inputregi contraseña" type="password" name="contraseña" placeholder="Escriba su contraseña">
+        </div>
+        <p class="errorlogin errorPassword"></p>
+
+        <div>
+            <button class="buttonregi" type="submit">Ingresar</button>
+        </div>
+        
+        <a href="./register.html" class="acolor">No tengo cuenta</a>
+    </form>
+ </section>
  <footer>
         <p>NAHUEL ABRAHAM, ALFREDO YABRAN, FEDERICO CHORNY</p>
     </footer>

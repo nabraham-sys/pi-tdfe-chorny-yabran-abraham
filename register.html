@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>SushiTop</title>
   </head>
   <!DOCTYPE html>
 <html lang="en">
@@ -38,15 +38,42 @@
     </ul>
   </nav>
 </header>
-  <body>
-    <form action="login.html" method="GET">
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Contraseña" />
-      <input type="password" placeholder="Repetir contraseña" />
-      <input type="submit" value="Registrarme">
-      <input type="checkbox"> Acepto términos y condiciones
-      <a href="login.html">Ya tengo una cuenta</a>
+  <section class="usersec">
+    <form action="./index.html" method="get" class="form_user registerForm">
+        <h1>Regístrese.</h1>
+
+        <div>
+            <label for="reg-email">Escriba un mail existente</label>
+            <input class="inputregi reg-email" type="email" name="email" placeholder="Escriba un mail existente">
+        </div>
+        <p class="errorlogin errorEmail"></p>
+
+        <div>
+            <label for="reg-password">Nueva contraseña</label>
+            <input class="inputregi reg-password" type="password" name="password" placeholder="Nueva contraseña">
+        </div>
+        <p class="errorlogin errorPassword"></p>
+
+        <div>
+            <label for="reg-password2">Reescriba su contraseña</label>
+            <input class="inputregi reg-password2" type="password" name="password2" placeholder="Reescriba su contraseña">
+        </div>
+        <p class="errorlogin errorPassword2"></p>
+
+        <div>
+            <input type="checkbox" class="reg-terms" name="terms">
+            <label for="reg-terms">Acepto términos y condiciones.</label>
+        </div>
+        <p class="errorlogin errorTerms"></p>
+
+        <div>
+            <button class="buttonregi" type="submit">Registrarme</button>
+        </div>
+
+        <a href="./login.html" class="acolor">Ya tengo una cuenta</a>
     </form>
+</section>
+    
      <footer>
         <p>NAHUEL ABRAHAM, ALFREDO YABRAN, FEDERICO CHORNY</p>
     </footer>
