@@ -8,17 +8,31 @@
 </head>
 <body>
 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SushiTop</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
   <header class="container">
     <div class="sushi-top"></div>
     <div class="logo">
-          <img src="IMG/logo.svg" alt="">
+          <img src="img/logo.svg" alt="">
+    </div>
+    <div class="searchbar">
+      <form id="searchForm" action="./search-result.html" method="get" class="searchbarform">
+            <input type="text" id="searchbar" name="buscar" class="searchbar" placeholder="Buscar...">
+            <button class="indbutton" type="submit" class="buttonsearch">Buscar</button>
+      </form>
     </div>
     <div class="auth">
           <a href="login.html">Login</a>
           <a href="register.html">Register</a>
-    </div>
- 
-
+     </div>
   <nav>
     <ul class="menu">
       <li><a href="index.html">HOME</a></li>
@@ -27,12 +41,13 @@
     </ul>
   </nav>
 </header>
-
-
-
-
-
- 
+    <div class="product-container">
+        <h1>Avocado Salmon Roll x5</h1>
+        <img src="img/avocado-salmon-roll.jpg" alt="">
+        <p>Precio: 15000 $</p>
+        <p>Descripción: Delicioso roll de sushi con aguacate y salmón fresco, exportado de Japon y preparado con los ingredientes más elaborados.</p>
+        <button class="btn">Comprar</button>
+    </div>
  <footer>
         <p>NAHUEL ABRAHAM, ALFREDO YABRAN, FEDERICO CHORNY</p>
     </footer>
