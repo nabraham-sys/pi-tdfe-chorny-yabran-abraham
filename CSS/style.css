@@ -30,9 +30,6 @@ img {
 header {
   padding-top: 20px;
   background-color: #000000;
-  background-size: cover;
-
-  
 }
 
 .sushi-top {
@@ -61,15 +58,14 @@ header {
   font-size: 12px;
   color: #000000;
   margin-left: 10px;
-  justify-content: space-between;
-
+  display: flex;
+  justify-content: right;
 }
 
 .auth a {
   font-size: 12px;
   color: #ffffff;
   margin-left: 10px;
-  justify-content: space-between;
   display: flex;
   justify-content: right;
 }
