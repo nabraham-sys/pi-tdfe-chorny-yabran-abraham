@@ -66,12 +66,14 @@ header {
   margin-left: 10px;
   display: flex;
   justify-content: right;
+  padding: 25px;
+  
 }
 
 .auth a {
-  font-size: 12px;
+  font-size: 15px;
   color: #ffffff;
-  margin-left: 10px;
+  margin-left: 45px;
   display: flex;
   justify-content: right;
 }
@@ -97,7 +99,8 @@ a {
 
 .menu {
   display: flex;
-  margin-bottom: 50px;
+  margin-bottom: auto;
+  text-align: center;
  
 }
 
@@ -254,15 +257,26 @@ a {
     padding: 26px;
  
 }
+.categoryul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.categorili {
+    margin-bottom: 25px;
+}
 .categorynav a {
     color: #ffffff;
     font-size: 18px;  
+    align-items: center;
 }
 .categorylist {
 
     justify-content: space-around;
-
 }
+
 .product-container {
   width: 100%;
   max-width: 1180px;
@@ -284,4 +298,8 @@ a {
   justify-content: space-around;
   max-width: 1180px; 
   margin: 0 auto;
+}
+.searchbar {
+  text-align: right;
+  padding : 3px;
 }
