@@ -259,6 +259,22 @@ footer li {
   text-align: center;
 }
 
+
+.tags {
+  letter-spacing: 10px;
+  background-color: #444;
+}
+
+.precio {
+  font-size: 40px;
+  font-family: 'Times New Roman', Times, serif;
+  color: burlywood;
+}
+
+
+
+
+
 /* TELEFONO */
 
 @media (max-width: 420px) {
@@ -326,4 +342,6 @@ footer li {
   .products {
     min-width: 0;
   }
+
+  
 }
