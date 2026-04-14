@@ -86,6 +86,8 @@ footer {
   width: 100%;
   max-width: 1200px;
   color: #ffffff;
+  justify-content: space-around;
+  
 }
 
 img {
@@ -302,4 +304,24 @@ a {
 .searchbar {
   text-align: right;
   padding : 3px;
+}
+
+footer {
+  display: flex;
+  margin-bottom: auto;
+  text-align: center;
+ 
+}
+
+footer li {
+  display: inline;
+  margin: 50px;
+ 
+}
+.usersec h1 {
+  text-align: center;
+}
+
+.usersec a {
+  text-align: center;
 }
