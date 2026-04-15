@@ -1,17 +1,8 @@
-.mainCategory {
-    display: flex;
-    width: 100%;
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 15px;
-    
-}
-.container {
-    width: 100%;
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: 0 15px;
-    
+/* Index */
+
+html, body {
+  width: 100%;
+  min-width: 0;
 }
 
 body {
@@ -22,11 +13,6 @@ body {
   color: rgb(255, 255, 255);
 }
 
-html, body {
-  width: 100%;
-  min-width: 0;
-}
-
 ul, ol {
   list-style: none;
 }
@@ -35,6 +21,36 @@ img {
   display: block;
   width: 100%;
 }
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* container */
+
+.container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.mainCategory {
+    display: flex;
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+/* HEADER */
 
 header {
   padding-top: 20px;
@@ -55,10 +71,7 @@ header {
 .logo img {
   width: 360px;
   border-radius: 50%;
-  
 }
-
-
 
 .auth {
   font-size: 12px;
@@ -67,7 +80,6 @@ header {
   display: flex;
   justify-content: right;
   padding: 25px;
-  
 }
 
 .auth a {
@@ -78,49 +90,46 @@ header {
   justify-content: right;
 }
 
-
-footer {
-  background: rgb(64, 64, 64);
-  margin: 30px auto 0;
-  border-radius: 10px;
-  width: 100%;
-  max-width: 1200px;
-  color: #ffffff;
-  justify-content: space-around;
-  
+.searchbar {
+  text-align: right;
+  padding: 3px;
 }
 
-img {
-  display: flex;
-  width: 100%;
+/* Category */
+
+.categorynav {
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding: 26px;
 }
 
-a {
-  text-decoration: none;
+.categoryul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.menu {
-  display: flex;
-  margin-bottom: auto;
-  text-align: center;
- 
+.categorili {
+    margin-bottom: 25px;
 }
 
-.menu li {
-  width: 100%;
-  background: #000000;
-  text-align: center;
-  display: flex;
+.categorynav a {
+    color: #ffffff;
+    font-size: 18px;
+    align-items: center;
 }
 
-.menu a {
-  display: flex;
-  padding: 12px 0;
-  color: white;
-  font-size: 13px;
-  text-align: center;
+.categorylist {
+    justify-content: space-around;
 }
 
+
+/* Product */
 
 .products {
   display: flex;
@@ -131,7 +140,6 @@ a {
 .card {
   width: 450px;
   padding: 1%;
-  
 }
 
 .card img {
@@ -157,61 +165,6 @@ a {
   font-size: 12px;
 }
 
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
-
-.usersec {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 88vh;
-    justify-content: center;
-}
-
-.form_user { 
-    background-color: rgba(0, 0, 0, 0.295);
-    padding: 26px;
-    border-radius: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 490px;
-}
-.categorynav {
-    background-color: rgba(128, 128, 128, 0.5);
-    border-radius: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    padding: 26px;
- 
-}
-.categoryul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-.categorili {
-    margin-bottom: 25px;
-}
-.categorynav a {
-    color: #ffffff;
-    font-size: 18px;  
-    align-items: center;
-}
-.categorylist {
-
-    justify-content: space-around;
-}
-
 .product-container {
   width: 100%;
   max-width: 1180px;
@@ -231,34 +184,9 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  max-width: 1180px; 
+  max-width: 1180px;
   margin: 0 auto;
 }
-.searchbar {
-  text-align: right;
-  padding : 3px;
-}
-
-footer {
-  display: flex;
-  margin-bottom: auto;
-  text-align: center;
- 
-}
-
-footer li {
-  display: inline;
-  margin: 50px;
- 
-}
-.usersec h1 {
-  text-align: center;
-}
-
-.usersec a {
-  text-align: center;
-}
-
 
 .tags {
   letter-spacing: 10px;
@@ -271,11 +199,108 @@ footer li {
   color: burlywood;
 }
 
+.tags {
+  background-color: #444;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.container-reviews h3 {
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 14px;
+}
+
+.container-reviews input,
+.container-reviews select,
+.container-reviews textarea {
+  background: #222222;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 10px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container-reviews button {
+  background: #444444;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* login y register */
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.usersec {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 88vh;
+    justify-content: center;
+}
+
+.usersec h1 {
+  text-align: center;
+}
+
+.usersec a {
+  text-align: center;
+}
+
+.form_user {
+    background-color: rgba(0, 0, 0, 0.295);
+    padding: 26px;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 490px;
+}
 
 
+/* Footer */
+
+footer {
+  background: rgb(64, 64, 64);
+  margin: 30px auto 0;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1200px;
+  color: #ffffff;
+  justify-content: space-around;
+}
+
+footer {
+  display: flex;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+footer li {
+  display: inline;
+  margin: 50px;
+}
 
 
-/* TELEFONO */
+/* Mobile */
+
 @media (max-width: 420px) {
 
   body {
@@ -356,7 +381,7 @@ footer li {
   .card h2 {
     font-size: 16px;
   }
-  
+
   .product-container {
     padding: 0 10px;
     margin: 20px auto;
@@ -371,7 +396,7 @@ footer li {
   .precio {
     font-size: 28px;
   }
- 
+
   .usersec {
     height: auto;
     padding: 30px 10px;
