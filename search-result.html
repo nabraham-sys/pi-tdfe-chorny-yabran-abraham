@@ -10,14 +10,20 @@
 <header class="container">
     <div class="sushi-top"></div>
         </div>
-    <div class="auth">
-          <a href="login.html">Login</a>
-          <a href="register.html">Register</a>
-     </div>
+    <nav class="auth">
+      <ul>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
     <div class="logo">
           <a href="index.html"><img src="img/logo.svg" alt=""></a>
     </div>
-
+    <div class="searchbar">
+      <form id="searchForm" action="./search-result.html" method="get" class="searchbarform">
+            <input type="text" id="searchbar" name="buscar" class="searchbar" placeholder="Buscar...">
+            <button type="submit" class="indbutton buttonsearch">Buscar</button>
+      </form>
 </header>
     <div class="indexbody">
          <h2 class="sin_resultados">No se encontraron resultados para tu búsqueda.</h2>
@@ -240,16 +246,20 @@
     </article>
 
   </section>
-    </div>
-<footer>
-  <ul>
-    <li>NAHUEL ABRAHAM </li>
-    <li>ALFREDO YABRAN </li>
-    <li>FEDERICO CHORNY</li>
+  
+  </main>
+
+
+<footer class="footer">
+  <ul class="footer-ul">
+    <li class="footer-li">NAHUEL ABRAHAM </li>
+    <li class="footer-li">ALFREDO YABRAN </li>
+    <li class="footer-li">FEDERICO CHORNY</li>
   </ul>
     
 </footer>
 </body>
+
 
     
 
