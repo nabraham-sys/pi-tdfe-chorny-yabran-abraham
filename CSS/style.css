@@ -104,6 +104,26 @@ header {
   padding: 3px;
 }
 
+/* Estado de login (sinEmail / conEmail) */
+
+.conEmail {
+  display: none;
+  text-align: right;
+  padding: 25px;
+  color: #ffffff;
+}
+
+.saludo {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.logOut {
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 /* Category */
 
 .categorynav {
@@ -186,7 +206,7 @@ header {
 .divcate .produim {
   height: 160px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
   display: block;
 }
