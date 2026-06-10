@@ -44,10 +44,14 @@ document.addEventListener("DOMContentLoaded", function () {
             errorPassword2.innerText = "Las contraseñas no coinciden";
             hayError = true;
         }
+        else if (!termsInput.checked) {
+            errorTerms.innerText = "Debe aceptar los términos y condiciones";
+            hayError = true;
+        }
 
         if (!hayError) {
             localStorage.setItem("userEmail", email);
-            registerForm.submit();
+            location.href = "./login.html";
         }
     });
 });
