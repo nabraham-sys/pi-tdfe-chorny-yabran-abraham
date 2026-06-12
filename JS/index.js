@@ -1,81 +1,88 @@
+let formulario = document.querySelector(".searchbarform");
+let campoBusqueda = document.getElementById("searchbar");
+
+formulario.addEventListener("submit", function(event) {
+    let texto = campoBusqueda.value.trim();
+
+    if (texto === "") {
+        event.preventDefault();
+        alert("El campo de búsqueda no puede estar vacío.");
+    } else if (texto.length < 3) {
+        event.preventDefault();
+        alert("El término buscado debe tener al menos 3 caracteres.");
+    }
+});
+
 let primeraSeccion = document.getElementById("productos");
 let segundaSeccion = document.getElementById("masVendidos");
 
-if (primeraSeccion) {
-    primeraSeccion.innerHTML = "";
+primeraSeccion.innerHTML = "";
 
-    fetch("https://dummyjson.com/products/category/smartphones?limit=10")
-        .then(function (res) {
-            return res.json();
-        })
-        .then(function (data) {
-            let productos = data.products;
+fetch("https://dummyjson.com/products/category/smartphones?limit=10")
+    .then(function(res) {
+        return res.json();
+    })
+    .then(function(data) {
+        let productos = data.products;
 
-            for (let i = 0; i < productos.length && i < 10; i++) {
-                let p = productos[i];
+        for (let i = 0; i < productos.length; i++) {
+            let p = productos[i];
 
-                let tarjeta =
-                    `<div class="divcate">
-                        <img src="${p.thumbnail}" class="produim">
-                        <p class="produtit">${p.title}</p>
-                        <p class="produdes">${p.description}</p>
-                        <p class="produprec">$${p.price}</p>
-                        <a href="./product.html?id=${p.id}" class="produinfo">Ver detalle.</a>
-                    </div>`;
+            primeraSeccion.innerHTML += `
+                <div class="divcate">
+                    <img src="${p.thumbnail}" alt="${p.title}" class="produim">
+                    <p class="produtit">${p.title}</p>
+                    <p class="produdes">${p.description}</p>
+                    <p class="produprec">$${p.price}</p>
+                    <a href="./product.html?id=${p.id}" class="produinfo">Ver detalle.</a>
+                </div>`;
+        }
+    })
+    .catch(function(error) {
+        console.log("Error en smartphones:", error);
+    });
 
-                primeraSeccion.innerHTML += tarjeta;
-            }
-        })
-        .catch(function (error) {
-            console.log("Error en smartphones:", error);
-        });
-}
+segundaSeccion.innerHTML = "";
 
-if (segundaSeccion) {
-    segundaSeccion.innerHTML = "";
+fetch("https://dummyjson.com/products/category/groceries?limit=10")
+    .then(function(res) {
+        return res.json();
+    })
+    .then(function(data) {
+        let productos = data.products;
 
-    fetch("https://dummyjson.com/products/category/groceries?limit=10")
-        .then(function (res) {
-            return res.json();
-        })
-        .then(function (data) {
-            let productos = data.products;
+        for (let i = 0; i < productos.length; i++) {
+            let p = productos[i];
 
-            for (let i = 0; i < productos.length && i < 10; i++) {
-                let p = productos[i];
-
-                let tarjeta =
-                    `<div class="divcate">
-                        <img src="${p.thumbnail}" class="produim">
-                        <p class="produtit">${p.title}</p>
-                        <p class="produdes">${p.description}</p>
-                        <p class="produprec">$${p.price}</p>
-                        <a href="./product.html?id=${p.id}" class="produinfo">Ver detalle.</a>
-                    </div>`;
-
-                segundaSeccion.innerHTML += tarjeta;
-            }
-        })
-        .catch(function (error) {
-            console.log("Error en groceries:", error);
-        });
-}
+            segundaSeccion.innerHTML += `
+                <div class="divcate">
+                    <img src="${p.thumbnail}" alt="${p.title}" class="produim">
+                    <p class="produtit">${p.title}</p>
+                    <p class="produdes">${p.description}</p>
+                    <p class="produprec">$${p.price}</p>
+                    <a href="./product.html?id=${p.id}" class="produinfo">Ver detalle.</a>
+                </div>`;
+        }
+    })
+    .catch(function(error) {
+        console.log("Error en groceries:", error);
+    });
 
 let categorias = document.querySelector(".categoryul");
 
 fetch("https://dummyjson.com/products/categories")
-  .then(function(res) {
-    return res.json();
-  })
-  .then(function(data) {
-    let categoriasApi = '';
+    .then(function(res) {
+        return res.json();
+    })
+    .then(function(data) {
+        let categoriasApi = "";
 
-    for (let i = 0; i < data.length; i++) {
-      categoriasApi += `<li><a href="./category.html?name=${data[i].slug}">${data[i].name}</a></li>`;
-    }
+        for (let i = 0; i < data.length; i++) {
+            categoriasApi += `<li><a href="./category.html?name=${data[i].slug}">${data[i].name}</a></li>`;
+        }
 
-    categorias.innerHTML = categoriasApi;
-  })
-  .catch(function(error) {
-    console.log("Error: " + error);
-  });
+        categorias.innerHTML = categoriasApi;
+    })
+    .catch(function(error) {
+        console.log("Error: " + error);
+    });
