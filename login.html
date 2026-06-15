@@ -10,9 +10,9 @@
 
   <header class="container">
     <div class="sushi-top"></div>
-        </div>
     <nav class="auth sinEmail">
       <ul>
+        <li><a href="index.html">Home</a></li>
         <li><a href="login.html">Login</a></li>
         <li><a href="register.html">Register</a></li>
       </ul>
@@ -25,10 +25,11 @@
           <a href="index.html" title="SushiTop Home"><img src="img/logo.svg" alt="SushiTop Logo"></a>
     </div>
     <div class="searchbar">
-      <form id="searchForm" action="./search-result.html" method="get" class="searchbarform">
+      <form id="searchForm" class="searchbarform">
             <input type="text" id="searchbar" name="buscar" class="searchbar" placeholder="Buscar...">
             <button type="submit" class="indbutton buttonsearch">Buscar</button>
       </form>
+    </div>
 </header>
 <section class="usersec">
     <form action="./index.html" method="get" class="form_user loginForm" novalidate>
@@ -45,6 +46,7 @@
             <input class="inputregi contraseña" type="password" name="contraseña" placeholder="Escriba su contraseña">
         </div>
         <p class="errorlogin errorPassword"></p>
+        <p class="errorlogin errorLogin"></p>
 
         <div>
             <button class="buttonregi" type="submit">Ingresar</button>

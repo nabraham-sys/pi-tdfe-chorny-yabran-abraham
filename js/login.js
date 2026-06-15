@@ -1,3 +1,25 @@
+// boton de busqueda del header
+let formulario = document.querySelector(".searchbarform");
+let campoBusqueda = document.querySelector("#searchbar");
+
+formulario.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let texto = campoBusqueda.value;
+
+    if (texto === "") {
+        alert("El campo de búsqueda no puede estar vacío.");
+        return;
+    }
+
+    if (texto.length < 3) {
+        alert("El término buscado debe tener al menos 3 caracteres.");
+        return;
+    }
+
+    localStorage.setItem('productoBuscado', texto);
+    window.location.href = './search-results.html';
+});
+
 let loginForm = document.querySelector(".loginForm");
 let emailInput = document.querySelector(".email");
 let passwordInput = document.querySelector(".contraseña");

@@ -12,6 +12,7 @@
     <div class="sushi-top"></div>
     <nav class="auth sinEmail">
       <ul>
+        <li><a href="index.html">Home</a></li>
         <li><a href="login.html">Login</a></li>
         <li><a href="register.html">Register</a></li>
       </ul>
@@ -24,7 +25,7 @@
           <a href="index.html" title="Home"><img src="img/logo.svg" alt=""></a>
     </div>
     <div class="searchbar">
-      <form id="searchForm" action="./search-result.html" method="get" class="searchbarform">
+      <form id="searchForm" class="searchbarform">
             <input type="text" id="searchbar" name="buscar" class="searchbar" placeholder="Buscar...">
             <button type="submit" class="indbutton buttonsearch">Buscar</button>
       </form>
@@ -35,26 +36,26 @@
         <h1>Regístrese.</h1>
 
         <div>
-            <label for="reg-email">Escriba un mail existente</label>
-            <input class="inputregi reg-email" type="email" name="email" placeholder="Escriba un mail existente">
+            <label for="regEmail">Escriba un mail existente</label>
+            <input class="inputregi regEmail" id="regEmail" type="email" name="email" placeholder="Escriba un mail existente">
         </div>
         <p class="errorlogin errorEmail"></p>
 
         <div>
-            <label for="reg-password">Nueva contraseña</label>
-            <input class="inputregi reg-password" type="password" name="password" placeholder="Nueva contraseña">
+            <label for="regPassword">Nueva contraseña</label>
+            <input class="inputregi regPassword" id="regPassword" type="password" name="password" placeholder="Nueva contraseña">
         </div>
         <p class="errorlogin errorPassword"></p>
 
         <div>
-            <label for="reg-password2">Reescriba su contraseña</label>
-            <input class="inputregi reg-password2" type="password" name="password2" placeholder="Reescriba su contraseña">
+            <label for="regPassword2">Reescriba su contraseña</label>
+            <input class="inputregi regPassword2" id="regPassword2" type="password" name="password2" placeholder="Reescriba su contraseña">
         </div>
         <p class="errorlogin errorPassword2"></p>
 
         <div>
-            <input type="checkbox" class="reg-terms" id="reg-terms" name="terms">
-            <label for="reg-terms">Acepto términos y condiciones.</label>
+            <input type="checkbox" class="regTerms" id="regTerms" name="terms">
+            <label for="regTerms">Acepto términos y condiciones.</label>
         </div>
         <p class="errorlogin errorTerms"></p>
 
