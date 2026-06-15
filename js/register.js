@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+
     let registerForm = document.querySelector(".registerForm");
 
     let emailInput = document.querySelector(".reg-email");
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     registerForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        let email = emailInput.value.trim();
+        let email = emailInput.value;
         let password = passwordInput.value;
         let password2 = password2Input.value;
 
@@ -51,7 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (!hayError) {
             localStorage.setItem("userEmail", email);
+            localStorage.setItem("password", password);
+
             location.href = "./login.html";
         }
     });
-});
