@@ -1,4 +1,4 @@
-// Menos 3 caracteres
+
 
 let formulario = document.querySelector(".searchbarform");
 let campoBusqueda = document.getElementById("searchbar");
@@ -15,7 +15,6 @@ formulario.addEventListener("submit", function(event) {
     }
 });
 
-// Busqueda
 
 document.addEventListener("DOMContentLoaded", function () {
 
