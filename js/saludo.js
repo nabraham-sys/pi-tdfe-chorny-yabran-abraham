@@ -1,15 +1,18 @@
 let email = localStorage.getItem("emailLogueado");
 
-let sinEmail = document.querySelector(".sinEmail");
+let sinEmail = document.querySelectorAll(".sinEmail");
 let conEmail = document.querySelector(".conEmail");
 let saludo = document.querySelector(".saludo");
-let logOut = document.querySelector(".logOut");
 
 if (email === null || email === "") {
-    sinEmail.style.display = "block";
+    sinEmail.forEach(function (elemento) {
+        elemento.style.display = "";
+    });
     conEmail.style.display = "none";
 } else {
-    sinEmail.style.display = "none";
+    sinEmail.forEach(function (elemento) {
+        elemento.style.display = "none";
+    });
     conEmail.style.display = "block";
     saludo.innerText = "Bienvenido: " + email;
 }

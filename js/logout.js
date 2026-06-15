@@ -1,9 +1,11 @@
-let menuLogin = document.querySelector(".sinEmail");
+let menuLogin = document.querySelectorAll(".sinEmail");
 let menuUsuario = document.querySelector(".conEmail");
 let botonLogout = document.querySelector(".logOut");
 
 botonLogout.addEventListener("click", function () {
     localStorage.removeItem("emailLogueado");
-    menuLogin.style.display = "block";
+    menuLogin.forEach(function (elemento) {
+        elemento.style.display = "";
+    });
     menuUsuario.style.display = "none";
 });
