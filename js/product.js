@@ -31,7 +31,7 @@ fetch("https://dummyjson.com/products/categories")
         let categoriasApi = "";
 
         for (let i = 0; i < data.length; i++) {
-            categoriasApi += <li class="categorili"><a href="./category.html?name=${data[i].slug}" class="categorya">${data[i].name}</a></li>;
+            categoriasApi += `<li class="categorili"><a href="./category.html?name=${data[i].slug}" class="categorya">${data[i].name}</a></li>`;
         }
 
         categorias.innerHTML = categoriasApi;
@@ -87,7 +87,7 @@ fetch(`https://dummyjson.com/products/${id}`)
         // armar tags (hasta 3)
         let etiquetas = "";
         for (let i = 0; i < data.tags.length && i < 3; i++) {
-            etiquetas += <span class="tag"> ${data.tags[i]} </span>;
+            etiquetas += `<span class="tag"> ${data.tags[i]} </span>`;
         }
         tags.innerHTML = etiquetas;
 

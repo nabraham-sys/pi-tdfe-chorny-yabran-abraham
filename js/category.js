@@ -31,7 +31,7 @@ fetch("https://dummyjson.com/products/categories")
         let categoriasApi = "";
 
         for (let i = 0; i < data.length; i++) {
-            categoriasApi += <li class="categorili"><a href="./category.html?name=${data[i].slug}" class="categorya">${data[i].name}</a></li>;
+            categoriasApi += `<li class="categorili"><a href="./category.html?name=${data[i].slug}" class="categorya">${data[i].name}</a></li>`;
         }
 
         categorias.innerHTML = categoriasApi;
