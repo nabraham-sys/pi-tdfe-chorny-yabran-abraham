@@ -1,4 +1,4 @@
-let email = localStorage.getItem("userEmail");
+let email = localStorage.getItem("emailLogueado");
 
 let sinEmail = document.querySelector(".sinEmail");
 let conEmail = document.querySelector(".conEmail");
