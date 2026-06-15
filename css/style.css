@@ -242,6 +242,11 @@ header {
   text-decoration: none;
 }
 
+.product-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
 .product-container {
   width: 100%;
   max-width: 1180px;

@@ -1,6 +1,6 @@
 // boton de busqueda del header
 let formulario = document.querySelector(".searchbarform");
-let campoBusqueda = document.querySelector("#textSearch");
+let campoBusqueda = document.querySelector("#searchbar");
 
 formulario.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -10,6 +10,12 @@ formulario.addEventListener("submit", function (event) {
         alert("El campo de búsqueda no puede estar vacío.");
         return;
     }
+
+    if (texto.length < 3) {
+        alert("El término buscado debe tener al menos 3 caracteres.");
+        return;
+    }
+
     localStorage.setItem('productoBuscado', texto);
     window.location.href = './search-results.html';
 });
@@ -23,28 +29,26 @@ fetch("https://dummyjson.com/products/categories")
     })
     .then(function (data) {
         let categoriasApi = "";
-        for (let i = 0; i < data.length; i++) {
-            categoriasApi += `<li><a href="#">${data[i].slug}</a></li>`;
-        }
-        categorias.innerHTML = categoriasApi;
 
-        // agrego el evento click a cada link de categoria
-        let links = document.querySelectorAll(".categoryul a");
-        for (let i = 0; i < links.length; i++) {
-            links[i].addEventListener("click", function (event) {
-                event.preventDefault();
-                localStorage.setItem('categoriaSeleccionada', links[i].innerText);
-                window.location.href = './category.html';
-            });
+        for (let i = 0; i < data.length; i++) {
+            categoriasApi += <li class="categorili"><a href="./category.html?name=${data[i].slug}" class="categorya">${data[i].name}</a></li>;
         }
+
+        categorias.innerHTML = categoriasApi;
     })
     .catch(function (error) {
         console.log("Error: " + error);
     });
 
-// carga de productos de la categoria seleccionada
+// carga de productos de la categoria seleccionada, leida desde la querystring
+let queryString = location.search;
+let queryStringObj = new URLSearchParams(queryString);
+let categoriaSeleccionada = queryStringObj.get('name');
+
+let titulo = document.querySelector("#categoriaTitulo");
+titulo.innerText = categoriaSeleccionada;
+
 let contenedor = document.querySelector(".products");
-let categoriaSeleccionada = localStorage.getItem('categoriaSeleccionada');
 
 fetch(`https://dummyjson.com/products/category/${categoriaSeleccionada}`)
     .then(function (response) {
@@ -63,10 +67,10 @@ fetch(`https://dummyjson.com/products/category/${categoriaSeleccionada}`)
                 <div class="divcate cateprod">
                     <img src="${producto.thumbnail}" alt="${producto.title}" class="produim">
                     <p class="produtit">${producto.title}</p>
+                    <p class="produdes">${producto.description}</p>
                     <p class="produprec">$${producto.price}</p>
-                    <a href="./product.html?id=${producto.id}" class="produinfo">Ver detalle</a>
-                </div>
-            `;
+                    <a href="./product.html?id=${producto.id}" class="produinfo">Ver detalle.</a>
+                </div>`;
         }
         contenedor.innerHTML = html;
     })

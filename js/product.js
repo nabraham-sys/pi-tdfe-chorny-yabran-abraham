@@ -1,3 +1,45 @@
+// boton de busqueda del header
+let formulario = document.querySelector(".searchbarform");
+let campoBusqueda = document.querySelector("#searchbar");
+
+formulario.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let texto = campoBusqueda.value;
+
+    if (texto === "") {
+        alert("El campo de búsqueda no puede estar vacío.");
+        return;
+    }
+
+    if (texto.length < 3) {
+        alert("El término buscado debe tener al menos 3 caracteres.");
+        return;
+    }
+
+    localStorage.setItem('productoBuscado', texto);
+    window.location.href = './search-results.html';
+});
+
+// carga de categorias en el aside desde la api
+let categorias = document.querySelector(".categoryul");
+
+fetch("https://dummyjson.com/products/categories")
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) {
+        let categoriasApi = "";
+
+        for (let i = 0; i < data.length; i++) {
+            categoriasApi += <li class="categorili"><a href="./category.html?name=${data[i].slug}" class="categorya">${data[i].name}</a></li>;
+        }
+
+        categorias.innerHTML = categoriasApi;
+    })
+    .catch(function (error) {
+        console.log("Error: " + error);
+    });
+
 // leer el id del producto desde la query string
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
@@ -7,13 +49,12 @@ let id = queryStringObj.get('id');
 let titulo = document.querySelector(".product-container h1");
 let imagen = document.querySelector(".product-container img");
 let tags = document.querySelector(".tags");
-let categorias = document.querySelector("#categoria");
+let marca = document.querySelector("#marca");
+let categoria = document.querySelector("#categoria");
 let precio = document.querySelector("#precio");
 let descripcion = document.querySelector("#descripcion");
 let stock = document.querySelector("#stock");
-let coments = document.querySelector(".containerReviews");
-let formulario = document.querySelector(".searchbarform");
-let campoBusqueda = document.querySelector("#textSearch");
+let reviews = document.querySelector(".containerReviews");
 
 // funcion que devuelve los primeros 10 caracteres de una fecha
 function formatearFecha(fechaCompleta) {
@@ -24,47 +65,34 @@ function formatearFecha(fechaCompleta) {
     return fechaCorta;
 }
 
-// formulario de busqueda del header
-formulario.addEventListener("submit", function (event) {
-    event.preventDefault();
-    let texto = campoBusqueda.value;
-
-    if (texto === "") {
-        alert("El campo de búsqueda no puede estar vacío.");
-        return;
-    }
-
-    localStorage.setItem('productoBuscado', texto);
-    window.location.href = './search-results.html';
-});
-
 // carga del producto desde la API
 fetch(`https://dummyjson.com/products/${id}`)
-    .then(function(response) {
+    .then(function (response) {
         return response.json();
     })
-    .then(function(data) {
+    .then(function (data) {
         titulo.innerText = data.title;
         imagen.src = data.thumbnail;
         imagen.alt = data.title;
 
         precio.innerText = "$" + data.price;
-        categorias.innerText = data.category;
-        localStorage.setItem('categoriaSeleccionada', data.category);
-        categorias.href = "./category.html";
+        marca.innerText = "Marca: " + data.brand;
 
-        descripcion.innerText = "Descripcion: " + data.description;
+        categoria.innerText = data.category;
+        categoria.href = "./category.html?name=" + data.category;
+
+        descripcion.innerText = "Descripción: " + data.description;
         stock.innerText = "Stock: " + data.stock;
 
-        // armar tags
+        // armar tags (hasta 3)
         let etiquetas = "";
-        for (let i = 0; i < data.tags.length; i++) {
-            etiquetas += `<span class="tag"> ${data.tags[i]} </span>`;
+        for (let i = 0; i < data.tags.length && i < 3; i++) {
+            etiquetas += <span class="tag"> ${data.tags[i]} </span>;
         }
         tags.innerHTML = etiquetas;
 
         // armar reviews
-        let html = "";
+        let html = "<h2>Feedback / Reviews</h2>";
         for (let i = 0; i < data.reviews.length; i++) {
             let review = data.reviews[i];
 
@@ -73,10 +101,7 @@ fetch(`https://dummyjson.com/products/${id}`)
                 estrellas += "🌟";
             }
 
-            let fechaTexto = "";
-            if (review.date) {
-                fechaTexto = formatearFecha(review.date);
-            }
+            let fechaTexto = formatearFecha(review.date);
 
             html += `
                 <div class="container-review">
@@ -86,8 +111,8 @@ fetch(`https://dummyjson.com/products/${id}`)
                     <p>${fechaTexto}</p>
                 </div>`;
         }
-        coments.innerHTML = html;
+        reviews.innerHTML = html;
     })
-    .catch(function(error) {
+    .catch(function (error) {
         console.log("Se detectó un error", error);
     });
