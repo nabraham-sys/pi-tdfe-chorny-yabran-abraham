@@ -3,6 +3,7 @@
 html, body {
   width: 100%;
   min-width: 0;
+  margin: 0;
 }
 
 body {
@@ -426,13 +427,13 @@ footer li {
   }
 
   .mainCategory {
-    flex-direction: column;
+    flex-direction: row;
     padding: 0 10px;
     box-sizing: border-box;
   }
 
   .categorynav {
-    width: 100%;
+    width: 38%;
     box-sizing: border-box;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -454,7 +455,7 @@ footer li {
   }
 
   .divcate {
-    width: 150px;
+    width: 95px;
   }
 
   .card {
