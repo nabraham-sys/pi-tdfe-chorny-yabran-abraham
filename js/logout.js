@@ -1,11 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let sinEmail = document.querySelector(".sinEmail");
-    let conEmail = document.querySelector(".conEmail");
-    let logOut = document.querySelector(".logOut");
+let menuLogin = document.querySelector(".sinEmail");
+let menuUsuario = document.querySelector(".conEmail");
+let logOut = document.querySelector(".logOut");
 
-    logOut.addEventListener("click", function () {
-        localStorage.removeItem("userEmail");
-        sinEmail.style.display = "block";
-        conEmail.style.display = "none";
-    });
+logOut.addEventListener("click", function () {
+    localStorage.removeItem("userEmail");
+    menuLogin.style.display = "block";
+    menuUsuario.style.display = "none";
 });
