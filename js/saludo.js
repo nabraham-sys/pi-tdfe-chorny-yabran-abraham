@@ -5,14 +5,14 @@ let conEmail = document.querySelector(".conEmail");
 let saludo = document.querySelector(".saludo");
 
 if (email === null || email === "") {
-    sinEmail.forEach(function (elemento) {
-        elemento.style.display = "";
-    });
+    for (let i = 0; i < sinEmail.length; i++) {
+        sinEmail[i].style.display = "";
+    }
     conEmail.style.display = "none";
 } else {
-    sinEmail.forEach(function (elemento) {
-        elemento.style.display = "none";
-    });
+    for (let i = 0; i < sinEmail.length; i++) {
+        sinEmail[i].style.display = "none";
+    }
     conEmail.style.display = "block";
     saludo.innerText = "Bienvenido: " + email;
 }

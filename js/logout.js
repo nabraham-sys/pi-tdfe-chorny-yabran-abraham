@@ -4,8 +4,8 @@ let botonLogout = document.querySelector(".logOut");
 
 botonLogout.addEventListener("click", function () {
     localStorage.removeItem("emailLogueado");
-    menuLogin.forEach(function (elemento) {
-        elemento.style.display = "";
-    });
+    for (let i = 0; i < menuLogin.length; i++) {
+        menuLogin[i].style.display = "";
+    }
     menuUsuario.style.display = "none";
 });
